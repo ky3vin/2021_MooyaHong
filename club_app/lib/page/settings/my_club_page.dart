@@ -49,10 +49,15 @@ class _MyClubPageState extends State<MyClubPage> {
                   border: Border.all(color: Colors.black, width: 3),
                   borderRadius: BorderRadius.circular(10)),
               child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                child: ListView(
+                  //mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text('메인 동아리 설정'),
+                    Container(
+                      alignment: Alignment.center,
+                      child: Text('메인 동아리 설정',
+                          style:
+                            TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+                    ),
                     ListTile(
                         title: Text('동아리1'),
                         leading: Radio(

@@ -32,14 +32,12 @@ class _SignUpPage1State extends State<SignUpPage1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Container(
+      body: Container(
           color: Colors.yellow,
           padding: EdgeInsets.all(20),
           child: Center(
-            child: Column(
+            child: ListView(
               children: <Widget>[
-                SizedBox(height: 150),
                 Row(
                   children: [
                     Checkbox(
@@ -141,7 +139,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
                             }
                           });
                         }),
-                    Text('홍보')
+                    Text('홍보 (선택)')
                   ],
                 ),
                 Container(
@@ -201,7 +199,6 @@ class _SignUpPage1State extends State<SignUpPage1> {
             ),
           ),
         ),
-      ),
     );
   }
 }

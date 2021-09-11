@@ -2,6 +2,7 @@ import 'package:club_app/page/page_container.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:club_app/page/login/login.dart';
+import 'package:club_app/constants.dart';
 
 void main() {
   runApp(MyApp());
@@ -10,10 +11,12 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'First page',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: kBackgroundColor,
+        textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor)
       ),
       home: LoginPage(),
     );

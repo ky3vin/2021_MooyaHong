@@ -1,6 +1,5 @@
 import 'package:club_app/page/login/login.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:intl/intl.dart';
 
@@ -77,6 +76,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
       child: Form(
         key: _formKey,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             SizedBox(height: 50),
             TextFormField(
@@ -95,7 +95,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
               return null;
             },*/
             ),
-            SizedBox(height: 30),
+           
             
             TextFormField(
               controller: _idController,
@@ -112,9 +112,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
               return null;
             },*/
             ),
-            SizedBox(
-              height: 30,
-            ),
+          
             TextFormField(
                 obscureText: true, 
                 controller: _passwordController,
@@ -130,9 +128,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
                   return null;
                 },*/
               ),
-           SizedBox(
-                height: 16.0,
-              ),
+         
            TextFormField(
                 obscureText: true, 
                 decoration: InputDecoration(
@@ -149,16 +145,14 @@ class _SignUpPage2State extends State<SignUpPage2> {
               ),
               
             Container(
-              height: 110,
-              width: 400,
+              height: 90,
+              width: MediaQuery.of(context).size.width,
               child: DefaultTextStyle(
                  style: CupertinoTheme.of(context).textTheme.textStyle,
-                 child: ListView(
-                 children: [
-                    const SizedBox(height: 32),
+                 child: 
                     _buildDatePicker(context),
-                      ],
-                     ),),
+                    
+                     ),
             ),
             Container(
                 margin: const EdgeInsets.only(top: 16.0),

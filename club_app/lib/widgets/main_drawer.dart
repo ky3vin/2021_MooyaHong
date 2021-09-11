@@ -18,8 +18,9 @@ class MainDrawer extends StatelessWidget {
                   color: Colors.blue,
                   child: InkWell(
                     child: SizedBox(
-                        child: Image.asset('images/profile.jpg',
-                            fit: BoxFit.cover)),
+                       child: Image.asset('assets/profile.jpg',
+                       fit: BoxFit.cover) 
+                          ),
                     onTap: () {
                       Navigator.push(
                         context,

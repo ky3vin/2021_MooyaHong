@@ -47,38 +47,41 @@ class _MemberManagementState extends State<MemberManagement> {
             SizedBox(
               height: 10,
             ),
-            Row(
-              children: [
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  decoration: BoxDecoration(
-                      border: Border.all(color: Colors.black, width: 3),
-                      borderRadius: BorderRadius.circular(50)),
-                  child: TextField(
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                        hintText: '동아리 멤버 검색',
-                        border: InputBorder.none,
-                        icon: Padding(
-                            padding: EdgeInsets.only(left: 13),
-                            child: Icon(Icons.search))),
-                    //onChanged: (text) { print ('First text field: $text');
-                    controller: memberNameController,
+            Container(
+              padding: EdgeInsets.all(3),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 5),
+                    width: MediaQuery.of(context).size.width * 0.5,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.black, width: 3),
+                        borderRadius: BorderRadius.circular(50)),
+                    child: TextField(
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                          hintText: '동아리 멤버 검색',
+                          border: InputBorder.none,
+                          icon: Padding(
+                              padding: EdgeInsets.only(left: 13),
+                              child: Icon(Icons.search))),
+                      //onChanged: (text) { print ('First text field: $text');
+                      controller: memberNameController,
+                    ),
                   ),
-                ),
-                ElevatedButton(onPressed: () {}, child: Text('편집하기')),
-                SizedBox(width: 20),
-                ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => ApplicationPage()),
-                      );
-                    },
-                    child: Text('지원자 확인'))
-              ],
+                  ElevatedButton(onPressed: () {}, child: Text('편집하기')),
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ApplicationPage()),
+                        );
+                      },
+                      child: Text('지원자 확인'))
+                ],
+              ),
             ),
             Container(
                 padding: const EdgeInsets.all(10),

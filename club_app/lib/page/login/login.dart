@@ -17,16 +17,16 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-            child: Container(
+        body:  Container(
       color: Colors.yellow,
       padding: EdgeInsets.all(32),
       child: Center(
         child: Column(
           children: [
             Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: <Widget>[
-                SizedBox(height: 150),
+                SizedBox(height: 50),
                 Column(
                   children: <Widget>[
                     Icon(
@@ -41,9 +41,9 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 120),
+                const SizedBox(height: 100),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
                       width: MediaQuery.of(context).size.width * 0.5,
@@ -80,7 +80,7 @@ class _LoginPageState extends State<LoginPage> {
                         ],
                       ),
                     ),
-                    SizedBox(width: 50),
+                    SizedBox(width: 0),
                     Container(
                       width: 120,
                       height: 120,
@@ -122,8 +122,9 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 SizedBox(height: 10),
                 Container(
+                  width: MediaQuery.of(context).size.width*0.8,
                   child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         TextButton(
                             style: TextButton.styleFrom(primary: Colors.black),
@@ -134,12 +135,10 @@ class _LoginPageState extends State<LoginPage> {
                                   MaterialPageRoute(
                                       builder: (context) => FindId()));
                             }),
-                        SizedBox(width: 45),
                         TextButton(
                             style: TextButton.styleFrom(primary: Colors.black),
                             child: Text('비밀번호 찾기'),
                             onPressed: () {}),
-                        SizedBox(width: 45),
                         TextButton(
                             style: TextButton.styleFrom(primary: Colors.black),
                             child: Text('회원가입'),
@@ -156,6 +155,6 @@ class _LoginPageState extends State<LoginPage> {
           ],
         ),
       ),
-    )));
+    ));
   }
 }

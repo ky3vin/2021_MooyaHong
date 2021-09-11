@@ -3,6 +3,8 @@ import 'package:club_app/page/board/notice_board/notice_board_page.dart';
 import 'package:club_app/page/chat/chat_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:club_app/widgets/main_drawer.dart';
+import 'package:club_app/constants.dart';
+
 
 //import 'package:get/route_manager.dart';
 
@@ -20,6 +22,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: MainDrawer(),
       body: Container(
+        decoration: BoxDecoration(color: kBackgroundColor,),
         padding: EdgeInsets.only(left: 10, right: 10),
         child: ListView(children: <Widget>[
           /*Positioned(
@@ -34,14 +37,28 @@ class _HomePageState extends State<HomePage> {
                     },
                     ),
                 ),*/
+          Stack(
+            children: <Widget>[
+              Container(
+                height: MediaQuery.of(context).size.height * 0.25,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image:AssetImage('assets/club_logo.jpeg',
+      
+                     )),
+                border: Border.all(color: Colors.black),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(5.0),)),
+              ),
+            ],
+          ),
           _pageOfTop(),
           //_pageOfMyClub(),
           SelectClub(),
 
           SizedBox(height: 30),
           _pageOfMyClub2(),
-          SizedBox(height: 30),
-          _pageOfMiddle(),
+   
           SizedBox(height: 30),
           example(),
           example(),
@@ -204,7 +221,7 @@ class _SelectClubState extends State<SelectClub> {
   @override
   void initState() {
     super.initState();
-    _selectedClub = '동아리?';
+    _selectedClub = '동아리 변경';
   }
 
   @override

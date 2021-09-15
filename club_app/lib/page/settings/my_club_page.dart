@@ -36,145 +36,154 @@ class _MyClubPageState extends State<MyClubPage> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(    //회원가입이나 아이디찾기 후 로그인하면 메인화면에서 뒤로가기가능함
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+        appBar: AppBar(title: Text('나의 동아리 관리'),),
+        body: SafeArea(child:Padding(
       padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-          Container(
-              height: MediaQuery.of(context).size.height * 0.3,
+      child: 
+        Column(
+          children: [
+            Container(
+                height: MediaQuery.of(context).size.height * 0.3,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                    border: Border.all(color: Colors.black, width: 3),
+                    borderRadius: BorderRadius.circular(10)),
+                child: Center(
+                  child: ListView(
+                    //mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.center,
+                        child: Text('메인 동아리 설정',
+                            style:
+                              TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+                      ),
+                      ListTile(
+                          title: Text('동아리1'),
+                          leading: Radio(
+                            activeColor: Color(0xFFF5CEB8),
+                            value: MyClubs.club1,
+                            groupValue: _myClubs,
+                            onChanged: (value) {
+                              setState(() {
+                                _myClubs = MyClubs.club1;
+                                print(_myClubs);
+                                Get.snackbar('동아리1', '메인동아리로 설정됨');
+                              });
+                            },
+                          )),
+                      ListTile(
+                          title: Text('동아리2'),
+                          leading: Radio(
+                            activeColor: Color(0xFFF5CEB8), 
+                            value: MyClubs.club2,
+                            groupValue: _myClubs,
+                            onChanged: (value) {
+                              setState(() {
+                                _myClubs = MyClubs.club2;
+                                Get.snackbar('동아리2', '메인동아리로 설정됨');
+                              });
+                            },
+                          )),
+                      ListTile(
+                          title: Text('동아리3'),
+                          leading: Radio(
+                            activeColor: Color(0xFFF5CEB8),
+                            value: MyClubs.club3,
+                            groupValue: _myClubs,
+                            onChanged: (value) {
+                              setState(() {
+                                _myClubs = MyClubs.club3;
+                                Get.snackbar('동아리3', '메인동아리로 설정됨');
+                              });
+                            },
+                          )),
+                      ListTile(
+                          title: Text('동아리4'),
+                          leading: Radio(
+                            value: MyClubs.club4,
+                            groupValue: _myClubs,
+                            onChanged: (value) {
+                              setState(() {
+                                _myClubs = MyClubs.club4;
+                                Get.snackbar('동아리4', '메인동아리로 설정됨');
+                              });
+                            },
+                          )),
+                      ListTile(
+                          title: Text('동아리5'),
+                          leading: Radio(
+                            activeColor: Color(0xFFF5CEB8),
+                            value: MyClubs.club5,
+                            groupValue: _myClubs,
+                            onChanged: (value) {
+                              setState(() {
+                                _myClubs = MyClubs.club5;
+                                Get.snackbar('동아리5', '메인동아리로 설정됨');
+                              });
+                            },
+                          ))
+                    ],
+                  ),
+                )),
+            SizedBox(height: 20),
+            Container(
+              height: MediaQuery.of(context).size.height * 0.48,
               width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                  border: Border.all(color: Colors.black, width: 3),
-                  borderRadius: BorderRadius.circular(10)),
-              child: Center(
-                child: ListView(
-                  //mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      alignment: Alignment.center,
-                      child: Text('메인 동아리 설정',
-                          style:
-                            TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
-                    ),
-                    ListTile(
-                        title: Text('동아리1'),
-                        leading: Radio(
-                          value: MyClubs.club1,
-                          groupValue: _myClubs,
-                          onChanged: (value) {
-                            setState(() {
-                              _myClubs = MyClubs.club1;
-                              print(_myClubs);
-                              Get.snackbar('동아리1', '메인동아리로 설정됨');
-                            });
-                          },
-                        )),
-                    ListTile(
-                        title: Text('동아리2'),
-                        leading: Radio(
-                          value: MyClubs.club2,
-                          groupValue: _myClubs,
-                          onChanged: (value) {
-                            setState(() {
-                              _myClubs = MyClubs.club2;
-                              Get.snackbar('동아리2', '메인동아리로 설정됨');
-                            });
-                          },
-                        )),
-                    ListTile(
-                        title: Text('동아리3'),
-                        leading: Radio(
-                          value: MyClubs.club3,
-                          groupValue: _myClubs,
-                          onChanged: (value) {
-                            setState(() {
-                              _myClubs = MyClubs.club3;
-                              Get.snackbar('동아리3', '메인동아리로 설정됨');
-                            });
-                          },
-                        )),
-                    ListTile(
-                        title: Text('동아리4'),
-                        leading: Radio(
-                          value: MyClubs.club4,
-                          groupValue: _myClubs,
-                          onChanged: (value) {
-                            setState(() {
-                              _myClubs = MyClubs.club4;
-                              Get.snackbar('동아리4', '메인동아리로 설정됨');
-                            });
-                          },
-                        )),
-                    ListTile(
-                        title: Text('동아리5'),
-                        leading: Radio(
-                          value: MyClubs.club5,
-                          groupValue: _myClubs,
-                          onChanged: (value) {
-                            setState(() {
-                              _myClubs = MyClubs.club5;
-                              Get.snackbar('동아리5', '메인동아리로 설정됨');
-                            });
-                          },
-                        ))
-                  ],
-                ),
-              )),
-          SizedBox(height: 20),
-          Container(
-            height: MediaQuery.of(context).size.height * 0.6,
-            width: MediaQuery.of(context).size.width,
-            child: ListView.builder(
-                padding: const EdgeInsets.all(8),
-                itemCount: clubs.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                      padding: EdgeInsets.only(top: 10, left: 10),
-                      margin: EdgeInsets.only(top: 10, bottom: 10),
-                      height: 150,
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black, width: 3),
-                          borderRadius: BorderRadius.circular(5)),
-                      child: Column(
-                        children: <Widget>[
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('이름: ${clubs[index]}'),
-                            ],
-                          ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('가입날짜: '),
-                            ],
-                          ),
-                          SizedBox(height: 50),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: 300,
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    _showMessageDialog(context);
-                                  },
-                                  child: Text('탈퇴하기'),
+              child: ListView.builder(
+                  padding: const EdgeInsets.all(8),
+                  itemCount: clubs.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                        padding: EdgeInsets.only(top: 10, left: 10),
+                        margin: EdgeInsets.only(top: 10, bottom: 10),
+                        height: 150,
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.black, width: 3),
+                            borderRadius: BorderRadius.circular(5)),
+                        child: Column(
+                          children: <Widget>[
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('이름: ${clubs[index]}'),
+                              ],
+                            ),
+                            Row(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('가입날짜: '),
+                              ],
+                            ),
+                            SizedBox(height: 50),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: 300,
+                                  child: ElevatedButton(
+                                    style: ElevatedButton.styleFrom(
+                                      primary: Color(0xFFF5CEB8),
+                                    ),
+                                    onPressed: () {
+                                      _showMessageDialog(context);
+                                    },
+                                    child: Text(
+                                      '탈퇴하기',
+                                      style: TextStyle(color: Colors.black),),
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ));
-                }),
-          ),
-        ],
+                              ],
+                            ),
+                          ],
+                        ));
+                  }),
+            ),
+          ],
+        ),
       ),
-    )),
-    onWillPop: ()async{
-    return false;},);
+    ),);
   }
 }
 

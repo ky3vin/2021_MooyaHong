@@ -37,6 +37,7 @@ class _AlertSettingState extends State<AlertSetting> {
                           _isChecked = value;
                         });
                       },
+                      activeColor: Color(0xFFF5CEB8),
                     ),
                   ],
                 ),

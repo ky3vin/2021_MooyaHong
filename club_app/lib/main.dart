@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       title: 'First page',
       theme: ThemeData(
         scaffoldBackgroundColor: kBackgroundColor,
-        textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor)
+        textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
+        primaryColor: Color(0xFFF5CEB8)
       ),
       home: LoginPage(),
     );

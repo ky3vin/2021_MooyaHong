@@ -118,6 +118,7 @@ class _ProfileSettingState extends State<ProfileSetting> {
 }*/
     return Scaffold(
       body: Container(
+          color: Color(0xFFF5CEB8),
           padding: EdgeInsets.all(32),
           child: Center(
             child: Column(
@@ -144,9 +145,13 @@ class _ProfileSettingState extends State<ProfileSetting> {
                   '홍길동',
                   style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
                 ),
-                TextButton(
-                  child: Text('갤러리에서 선택'),
-                  onPressed: () => pickImage(ImageSource.gallery),
+                Container(
+                  child: TextButton(
+                    child: Text(
+                      '갤러리에서 선택',
+                     ),
+                    onPressed: () => pickImage(ImageSource.gallery),
+                  ),
                 ),
                 TextButton(
                   child: Text('카메라 촬영'),
@@ -170,13 +175,6 @@ class _ProfileSettingState extends State<ProfileSetting> {
                 Card(
                   child: ListTile(
                     leading: Icon(Icons.location_city),
-                    title: Text('예시'),
-                    onTap: () {},
-                  ),
-                ),
-                Card(
-                  child: ListTile(
-                    leading: Icon(Icons.favorite),
                     title: Text('예시'),
                     onTap: () {},
                   ),

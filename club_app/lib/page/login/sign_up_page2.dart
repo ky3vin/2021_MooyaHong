@@ -69,7 +69,7 @@ class _SignUpPage2State extends State<SignUpPage2> {
   Widget build(BuildContext context) {
     return Scaffold(
       body:Container(
-        color: Colors.yellow,
+        color: Color(0xFFF5CEB8),
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       padding: const EdgeInsets.all(16),

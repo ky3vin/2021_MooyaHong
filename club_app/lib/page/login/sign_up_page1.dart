@@ -33,7 +33,7 @@ class _SignUpPage1State extends State<SignUpPage1> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          color: Colors.yellow,
+          color: Color(0xFFF5CEB8),
           padding: EdgeInsets.all(20),
           child: Center(
             child: ListView(

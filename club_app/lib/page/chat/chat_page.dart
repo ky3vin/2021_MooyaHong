@@ -75,7 +75,7 @@ class _ChatScreenState extends State<ChatScreen> with TickerProviderStateMixin {
         child: ListView(padding: EdgeInsets.zero, children: <Widget>[
           DrawerHeader(
             child: Text('동아리원1'),
-            decoration: BoxDecoration(color: Colors.blue[300]),
+            decoration: BoxDecoration(color: Color(0xFFF5CEB8),),
           ),
           ListTile(
             title: Text("Item 1"),

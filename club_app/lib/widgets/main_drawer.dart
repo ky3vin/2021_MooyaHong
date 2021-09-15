@@ -9,13 +9,25 @@ import 'package:club_app/page/login/login.dart';
 
 class MainDrawer extends StatelessWidget {
   final drawerHeader = UserAccountsDrawerHeader(
-      accountName: Text('사용자1'),
-      accountEmail: Text('컴퓨터공학과 1학년'),
+      onDetailsPressed: (){print('name clicked');},    //삭제 필요
+      decoration: BoxDecoration(
+        color: Color(0xFFF5CEB8),
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20)
+        )),
+      accountName: Text('사용자1',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20),),
+      accountEmail: Text('컴퓨터공학과 1학년',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 15),),
       currentAccountPicture: Container(
         child: Builder(
           builder: (context) => ClipOval(
               child: Material(
-                  color: Colors.blue,
                   child: InkWell(
                     child: SizedBox(
                        child: Image.asset('assets/profile.jpg',
@@ -30,7 +42,26 @@ class MainDrawer extends StatelessWidget {
                     },
                   ))),
         ),
-      ));
+      ))
+      /*accountEmail:  Text(''),
+      accountName: Row(
+        children: <Widget>[
+          Container(
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(shape: BoxShape.circle),
+            child: CircleAvatar(
+              backgroundColor: Color(0xFFF5CEB8),
+              child: Image.asset('assets/profile.jpg'),
+            ),
+          ),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget> [
+              Text('test')
+            ]
+          )
+        ],))사진 , 이름 가로로 정렬하는 코드*/;
 
   _showMessageDialog(BuildContext context) => showDialog(
       context: context,
@@ -57,6 +88,7 @@ class MainDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: ListView(
+        padding: const EdgeInsets.only(top: 0),
         children: <Widget>[
           drawerHeader,
           /*Stack(
@@ -91,6 +123,7 @@ class MainDrawer extends StatelessWidget {
                 fontSize: 20,
               ),
             ),
+            trailing: Icon(Icons.add),   
           ),
           ListTile(
             onTap: () => Navigator.push(

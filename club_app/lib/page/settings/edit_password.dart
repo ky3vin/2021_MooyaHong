@@ -13,8 +13,10 @@ class _EditPasswordState extends State<EditPassword> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('비밀번호 변경하기')
+        title: Text('비밀번호 변경하기',
+           style: TextStyle(color: Colors.black),),
       ),
+      
       body: Container(
         padding: EdgeInsets.all(10),
         child: Column(

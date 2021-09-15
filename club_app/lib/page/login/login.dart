@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body:  Container(
-      color: Colors.yellow,
+      color: Color(0xFFF5CEB8),
       padding: EdgeInsets.all(32),
       child: Center(
         child: Column(
@@ -86,7 +86,7 @@ class _LoginPageState extends State<LoginPage> {
                       height: 120,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              primary: Colors.orange[400],
+                              primary: Color(0xFFBCAAA4),  //버튼 색깔 정해야함
                               onPrimary: Colors.black),
                           onPressed: () {
                             Navigator.pop(context);

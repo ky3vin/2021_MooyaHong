@@ -278,14 +278,20 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "syncfusion_flutter_calendar",
+      "rootUri": "file:///Users/changhyeonpark/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_calendar-19.2.62",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "syncfusion_flutter_core",
-      "rootUri": "file:///Users/changhyeonpark/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-19.2.56",
+      "rootUri": "file:///Users/changhyeonpark/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_core-19.2.62",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
     {
       "name": "syncfusion_flutter_datepicker",
-      "rootUri": "file:///Users/changhyeonpark/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_datepicker-19.2.56",
+      "rootUri": "file:///Users/changhyeonpark/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/syncfusion_flutter_datepicker-19.2.62",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -298,6 +304,12 @@
     {
       "name": "test_api",
       "rootUri": "file:///Users/changhyeonpark/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/test_api-0.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "timezone",
+      "rootUri": "file:///Users/changhyeonpark/Documents/development/flutter/.pub-cache/hosted/pub.dartlang.org/timezone-0.7.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -344,7 +356,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2021-09-13T15:12:56.412764Z",
+  "generated": "2021-09-20T13:50:05.143794Z",
   "generator": "pub",
   "generatorVersion": "2.13.4"
 }

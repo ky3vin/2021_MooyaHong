@@ -5,6 +5,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:club_app/widgets/main_drawer.dart';
 import 'package:club_app/constants.dart';
 import 'package:club_app/page/settings/my_club_page.dart';
+import 'package:club_app/widgets/carousel.dart';
+import 'package:syncfusion_flutter_calendar/calendar.dart';
+import 'package:club_app/page/board/ad_board_page.dart';
 
 
 //import 'package:get/route_manager.dart';
@@ -18,8 +21,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
   @override
   Widget build(BuildContext context) {
+  
     return  WillPopScope(child: Scaffold(
       /*appBar: AppBar(
         title: Row(
@@ -132,15 +137,15 @@ class _HomePageState extends State<HomePage> {
             child: ListView(
               children: [
                
-
+               
                 _pageOfMyClub2(),
-   
+                
                 SizedBox(height: 30),
+             
                 example2(),
-                example(),
-                example(),
-                example(),
-                example(),],),
+                example3(),
+                _calendar(), 
+              ],),
           )
           
         ]),
@@ -150,8 +155,25 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-Widget _pageOfTop() {
-  return Padding(padding: EdgeInsets.only(top: 50.0));
+Widget _calendar() {
+  return Builder(
+        builder: (BuildContext context) {
+          return Card(
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16),
+            ),
+          elevation: 4,
+          child: Container(
+            padding: EdgeInsets.all(5),
+            height: MediaQuery.of(context).size.height*0.5,
+            child: SfCalendar(
+              backgroundColor: kBackgroundColor,
+              view: CalendarView.month,
+              monthViewSettings: MonthViewSettings(
+                appointmentDisplayMode: MonthAppointmentDisplayMode.appointment,
+                navigationDirection:  MonthNavigationDirection.horizontal),
+            )
+
+  ));});
 }
 
 /*Widget _pageOfMyClub() {
@@ -203,10 +225,18 @@ Widget _pageOfTop() {
 */
 
 Widget _pageOfMyClub2() {
+    final List<String> images = [
+   
+    'assets/mooyahong.png'
+  
+    
+  ];
+  
   return CarouselSlider(
     options: CarouselOptions(
-        height: 200.0, autoPlay: true, autoPlayInterval: Duration(seconds: 3)),
-    items: [1, 2, 3, 4, 5].map((i) {
+      enlargeCenterPage: true,
+        height: 150.0, autoPlay: true, autoPlayInterval: Duration(seconds: 3)),
+    items: [0, 1, 2, 3, 4].map((i) {
       return Builder(
         builder: (BuildContext context) {
           return InkWell(
@@ -218,17 +248,16 @@ Widget _pageOfMyClub2() {
                             builder: (context) => MyClubPage())); //배너 각자 설정하는법관련 수정필요
 
             }},
-            child:Container(
+            child:Image.asset(images[i])   
+             /* child:Container(
               alignment: Alignment.center,
               width: MediaQuery.of(context).size.width,
               margin: EdgeInsets.symmetric(horizontal: 5.0),
               decoration: BoxDecoration(
                   color: kActiveIconColor,
                   borderRadius: BorderRadius.circular(10.0)),
-              child: Text(
-                '배너 $i',
-                style: TextStyle(fontSize: 16.0),
-              )));
+              child: Text('어플 사용법 / 홍보')
+              )    이미지오류뜸*/);
         },
       );
     }).toList(),
@@ -236,6 +265,7 @@ Widget _pageOfMyClub2() {
 }
 
 Widget _pageOfMiddle() {
+
   return Container(
       child: Row(
     mainAxisAlignment: MainAxisAlignment.center,
@@ -294,18 +324,42 @@ Widget example() {
 
 
 Widget example2() {
-  return Card(
+  return Builder(
+        builder: (context) => Card(
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16),
     ),
     elevation: 4,
     child: Container(
       padding: EdgeInsets.all(20),
-      width: 200,
-      height: 200,
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height*0.3,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-        Text('공지사항',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold,)),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('공지사항',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,)),
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NoticeBoardPage()));
+              },
+              child:Container(
+              child: Row(
+                children: [
+                  Text('더보기',style: TextStyle(fontSize: 10),),
+                  Icon(Icons.add,size: 10,),
+                ],
+              ),
+            ))
+          ],
+        ),
+        Divider(
+          height: 20,
+          color: Colors.black,),
+
         Text(' 공지사항입니다',style: TextStyle(fontSize: 15)),
         Text(' 공지사항입니다',style: TextStyle(fontSize: 15)),
         Text(' 공지사항입니다',style: TextStyle(fontSize: 15)),
@@ -314,7 +368,55 @@ Widget example2() {
       ],)
     ),
     
-  );
+  ));
+}
+
+Widget example3() {
+  return Builder(
+        builder: (context) => Card(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16),
+    ),
+    elevation: 4,
+    child: Container(
+      padding: EdgeInsets.all(20),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height*0.3,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text('홍보게시판',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,)),
+            InkWell(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AdBoardPage()));
+              },
+              child:Container(
+              child: Row(
+                children: [
+                  Text('더보기',style: TextStyle(fontSize: 10),),
+                  Icon(Icons.add,size: 10,),
+                ],
+              ),
+            ))
+          ],
+        ),
+        Divider(
+          height: 20,
+          color: Colors.black,),
+
+        Text(' 홍보입니다',style: TextStyle(fontSize: 15)),
+        Text(' 홍보입니다',style: TextStyle(fontSize: 15)),
+        Text(' 홍보입니다',style: TextStyle(fontSize: 15)),
+        Text(' 홍보입니다',style: TextStyle(fontSize: 15))
+        
+      ],)
+    ),
+    
+  ));
 }
 
 class SelectClub extends StatefulWidget {
